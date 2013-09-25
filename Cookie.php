@@ -63,7 +63,8 @@ class Cookie {
 		$this->name   = $name;
 		$this->domain = "." . $_SERVER["SERVER_NAME"];
 		
-		// Default to secure cookies, if https is used
+		// default to secure cookies, if https is used
+		// check https === off for IIS
 		if ($_SERVER["HTTPS"] && $_SERVER["HTTPS"] !== "off") {
 			$this->secure = true;
 		}
@@ -103,7 +104,8 @@ class Cookie {
 	 * @return void
 	 */
 	public function expires_at ($time) {
-		if ($time === 0) {
+		// session cookies should be set with null instead of 0
+		if (empty($time)) {
 			$time = null;
 		}
 
