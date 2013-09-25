@@ -1,0 +1,4 @@
+Cookie
+======
+
+PHP Cookie Wrapper
