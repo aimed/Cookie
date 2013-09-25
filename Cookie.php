@@ -77,9 +77,10 @@ class Cookie {
 	/**
 	 * Sets the cookie to expires in given time
 	 *
-	 * @TODO: probably make use of strtotime()?
+	 * @todo Make use of strtotime()?
 	 * @param int $time
 	 * @param string $unit
+	 * @return void
 	 */
 	public function expires_in ($time, $unit = "months") {
 		if (!empty($time)) {
