@@ -137,7 +137,7 @@ class Cookie {
 	 * @return string
 	 */
 	public function get () {
-		return $this->value === "" ? $_COOKIES[$this->name] : $this->value;
+		return ($this->value === "" && isset($_COOKIES[$this->name])) ? $_COOKIES[$this->name] : $this->value;
 	}
 
 
