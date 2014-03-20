@@ -65,7 +65,7 @@ class Cookie {
 		
 		// default to secure cookies, if https is used
 		// check https === off for IIS
-		if ($_SERVER["HTTPS"] && $_SERVER["HTTPS"] !== "off") {
+		if (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] && $_SERVER["HTTPS"] !== "off") {
 			$this->secure = true;
 		}
 		
